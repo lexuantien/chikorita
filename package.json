@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production  wp --config ./webpack/webpack.config.js --mode production",
-    "start": "cross-env NODE_ENV=development  wp --config ./webpack/webpack.config.js --mode development"
+    "start": "cross-env NODE_ENV=development  wp --config ./webpack/webpack.config.js --mode development",
+    "build:stats": "wp --mode production --json > stats.json"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -44,6 +45,7 @@
     "glob": "^7.2.0",
     "html-webpack-plugin": "^5.5.0",
     "install": "^0.13.0",
+    "javascript-obfuscator": "^4.0.0",
     "mini-css-extract-plugin": "^2.5.3",
     "nodemon": "^2.0.15",
     "postcss-loader": "^6.2.1",
@@ -54,11 +56,12 @@
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
     "ts-loader": "^9.2.7",
-    "typescript": "^4.5.5",
+    "typescript": "4.5.5",
     "webpack": "^5.69.1",
     "webpack-merge": "^5.8.0",
     "webpack-nano": "^1.1.1",
     "webpack-notifier": "^1.15.0",
+    "webpack-obfuscator": "^3.5.1",
     "webpack-plugin-serve": "^1.6.0"
   },
   "dependencies": {

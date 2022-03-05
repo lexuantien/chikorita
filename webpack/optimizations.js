@@ -2,7 +2,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const splitChunks = {
-  splitChunks: {
     minSize: { javascript: 20000, "css/mini-extra": 10000 },
     cacheGroups: {
       commons: {
@@ -11,7 +10,6 @@ const splitChunks = {
         chunks: "initial",
       },
     },
-  },
 };
 
 const minifyJTS = new TerserPlugin();

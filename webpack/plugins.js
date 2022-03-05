@@ -15,6 +15,7 @@ const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const { GitRevisionPlugin } = require("git-revision-webpack-plugin");
+const WebpackObfuscator = require("webpack-obfuscator");
 
 const PATH = path.join(ROOT_DIR, "/src");
 
@@ -33,7 +34,8 @@ const webpackNotifierPlugin = new WebpackNotifierPlugin({
 });
 
 const miniCssExtactPlugin = new MiniCssExtractPlugin({
-  filename: "[name].css",
+  // filename: "[name].css",
+  filename: "[name].[contenthash].css",
 });
 
 const purgeCssPlugin = new PurgeCSSPlugin({
@@ -82,6 +84,13 @@ const attachRevisionPlugin = new BannerPlugin({
   banner: new GitRevisionPlugin().version(),
 });
 
+const obfuscatorPlugin = new WebpackObfuscator(
+  {
+    rotateStringArray: true,
+  },
+  ["excluded_bundle_name.js"]
+);
+
 module.exports = {
   htmlWebpackPlugin,
   caseSensitivePathsPlugin,
@@ -95,5 +104,6 @@ module.exports = {
   esLintPlugin,
   reactRefreshPlugin,
   attachRevisionPlugin,
+  obfuscatorPlugin,
   // forkTsCheckerWebpackPlugin,
 };

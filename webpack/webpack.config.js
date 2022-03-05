@@ -6,8 +6,8 @@ const commonConfig = require("./common");
 const prodConfig = require("./prod");
 const devConfig = require("./dev");
 
-const a = merge(commonConfig, devConfig, { mode });
-console.log(a.entry);
+// const a = merge(commonConfig, devConfig, { mode });
+// console.log(a.entry);
 
 const getConfig = (mode) => {
   switch (mode) {

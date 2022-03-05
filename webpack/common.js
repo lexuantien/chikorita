@@ -20,7 +20,7 @@ const {
 const commonConfig = {
   context: __dirname,
 
-  entry: [path.join(ROOT_DIR, "/src/iss.ts")],
+  entry: [path.join(ROOT_DIR, "/src/index..tsx")],
 
   output: {
     path: path.join(ROOT_DIR, "/dist"),
