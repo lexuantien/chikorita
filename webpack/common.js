@@ -17,6 +17,9 @@ const {
   cssRule,
   typescriptRule,
 } = require("./rules");
+
+const { externals } = require("./externals");
+
 const commonConfig = {
   context: __dirname,
 
@@ -28,6 +31,8 @@ const commonConfig = {
     // filename: "[name].bundle.js",
     // assetModuleFilename: "images/[hash][ext][query]",
     clean: true,
+    libraryTarget: "umd",
+    globalObject: "this",
   },
 
   resolve: {
@@ -42,6 +47,8 @@ const commonConfig = {
     esLintPlugin,
     // forkTsCheckerWebpackPlugin,
   ],
+
+  // externals,
 
   module: {
     rules: [

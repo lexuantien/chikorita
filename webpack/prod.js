@@ -27,9 +27,9 @@ const productionConfig = {
   },
 
   performance: {
-    hints: "warning", // "error" or false are valid too
-    maxEntrypointSize: 50000, // in bytes, default 250k
-    maxAssetSize: 100000, // in bytes
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
 };
 
