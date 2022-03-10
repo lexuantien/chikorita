@@ -52,14 +52,14 @@ const webpackPluginServe = new WebpackPluginServe({
   port: process.env.PORT || 8080,
   static: path.join(ROOT_DIR, "/dist"),
   static: "./dist", // Expose if output.path changes
-  liveReload: true,
+  // liveReload: true,
   waitForBuild: true,
   historyFallback: true,
 });
 
-const mode = process.env.NODE_ENV ?? "production";
+// const mode = process.env.NODE_ENV ?? "production";
 const definePlugin = new DefinePlugin({
-  "process.env.NODE_ENV": JSON.stringify(mode),
+  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 });
 
 // const providePlugin = new ProvidePlugin();
@@ -84,6 +84,8 @@ const attachRevisionPlugin = new BannerPlugin({
   banner: new GitRevisionPlugin().version(),
 });
 
+const forkTsPlugin = new ForkTsCheckerWebpackPlugin()
+
 const obfuscatorPlugin = new WebpackObfuscator(
   {
     rotateStringArray: true,
@@ -105,5 +107,6 @@ module.exports = {
   reactRefreshPlugin,
   attachRevisionPlugin,
   obfuscatorPlugin,
+  forkTsPlugin
   // forkTsCheckerWebpackPlugin,
 };

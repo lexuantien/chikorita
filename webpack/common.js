@@ -7,6 +7,7 @@ const {
   definePlugin,
   esLintPlugin,
   forkTsCheckerWebpackPlugin,
+  forkTsPlugin,
 } = require("./plugins");
 const {
   javascriptRule,
@@ -18,10 +19,10 @@ const {
   typescriptRule,
 } = require("./rules");
 
-const { externals } = require("./externals");
+// const { externals } = require("./externals");
 
 const commonConfig = {
-  context: __dirname,
+  context: ROOT_DIR,
 
   entry: [path.join(ROOT_DIR, "/src/index..tsx")],
 
@@ -45,6 +46,7 @@ const commonConfig = {
     miniCssExtactPlugin,
     definePlugin,
     esLintPlugin,
+    forkTsPlugin
     // forkTsCheckerWebpackPlugin,
   ],
 

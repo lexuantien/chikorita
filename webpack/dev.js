@@ -10,6 +10,11 @@ const devConfig = {
 
   watch: true,
 
+  stats: {
+    errorDetails: true,
+    children: true
+  },
+
   plugins: [
     reactRefreshPlugin,
     webpackPluginServe,
