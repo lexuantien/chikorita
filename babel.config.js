@@ -25,11 +25,11 @@ module.exports = {
     "@babel/plugin-proposal-object-rest-spread",
     // Applies the react-refresh Babel plugin on non-production modes only
     process.env.NODE_ENV !== "production" && "react-refresh/babel",
-    // [
-    //   "@ladifire-opensource/babel-plugin-transform-stylex",
-    //   {
-    //     inject: true, // will inject compiled css to stylesheet in head
-    //   },
-    // ],
+    [
+      "@ladifire-opensource/babel-plugin-transform-stylex",
+      {
+        inject: true, // will inject compiled css to stylesheet in head
+      },
+    ],
   ].filter(Boolean),
 };

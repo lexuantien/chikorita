@@ -31,9 +31,9 @@ const commonConfig = {
     // filename: "[name].bundle.js",
     // assetModuleFilename: "images/[hash][ext][query]",
     clean: true,
-    libraryTarget: "umd",
-    globalObject: "this",
-    umdNamedDefine: true,
+    // libraryTarget: "umd",
+    // globalObject: "this",
+    // umdNamedDefine: true,
   },
 
   resolve: {

@@ -1,7 +1,8 @@
 import React from "react";
 // import { useStaticStyles } from "./GlobalStyle";
+
 import stylex from "@ladifire-opensource/stylex";
-import { withErrorBoundary } from "./ErrorBoundary";
+import { withErrorBoundary } from "@components/ErrorBoundary";
 
 const styles = stylex.create({
   root: {

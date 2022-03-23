@@ -1,15 +1,1196 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function() {
-return /******/ (function() { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/components/App.tsx":
+/*!********************************!*\
+  !*** ./src/components/App.tsx ***!
+  \********************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_yugi_0Sasuk3_js_best_src_components_App_uskZLHL_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/components/App.uskZLHL.css */ "./src/components/App.uskZLHL.css");
+/* harmony import */ var _home_yugi_0Sasuk3_js_best_src_components_App_uskZLHL_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_home_yugi_0Sasuk3_js_best_src_components_App_uskZLHL_css__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+"use strict";
+__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'core-js/modules/es.object.define-property.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+Object.defineProperty(__webpack_exports__, "__esModule", ({
+    value: true
+}));
+exports["default"] = void 0;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var _stylex = _interopRequireDefault(__webpack_require__(/*! @ladifire-opensource/stylex */ "./node_modules/@ladifire-opensource/stylex/index.js"));
+var _ErrorBoundary = __webpack_require__(/*! @components/ErrorBoundary */ "./src/components/ErrorBoundary.tsx");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+// import { useStaticStyles } from "./GlobalStyle";
+var styles = {
+    root: {
+        fontWeight: "y54dqtlu",
+        color: "jab0vpmp"
+    }
+};
+function App() {
+    // useStaticStyles();
+    return /*#__PURE__*/ _react["default"].createElement("div", {
+        className: (0, _stylex["default"])(styles.root)
+    }, "Component");
+}
+_c = App;
+var _default = (0, _ErrorBoundary.withErrorBoundary)("App", App);
+exports["default"] = _default;
+var _c;
+__webpack_require__.$Refresh$.register(_c, "App");
+
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/components/ErrorBoundary.tsx":
+/*!******************************************!*\
+  !*** ./src/components/ErrorBoundary.tsx ***!
+  \******************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "withErrorBoundary": function() { return /* binding */ withErrorBoundary; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_error_boundary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-error-boundary */ "./node_modules/react-error-boundary/dist/react-error-boundary.umd.js");
+/* harmony import */ var react_error_boundary__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_error_boundary__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _helpers_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @helpers/logger */ "./src/helpers/logger.ts");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+
+
+
+const logger = new _helpers_logger__WEBPACK_IMPORTED_MODULE_1__["default"]("ErrorBoundary");
+const ComponentErrorBoundary = ({ boundaryTag, children }) => {
+    // useCallback w/ react-hooks so we don't pass a brand new function every time this re-renders
+    const FallbackComponent = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'none' }, "data-component-boundary-error": `Error while rendering the component ${boundaryTag ? `([${boundaryTag}])` : ''}` }), [boundaryTag]);
+    const onError = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => (error) => {
+        const errorMessage = `An error has occurred while rendering component contained with MartyErrorBoundary: ${error.toString()}`;
+        logger.logError(`${boundaryTag ? `[${boundaryTag}]: ` : ''}${errorMessage}`);
+    }, [boundaryTag]);
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_error_boundary__WEBPACK_IMPORTED_MODULE_2__.ErrorBoundary, { FallbackComponent: FallbackComponent, onError: onError }, children);
+};
+const withErrorBoundary = (boundaryTag, Component) => {
+    const WrappedComponent = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(ComponentErrorBoundary, { boundaryTag: boundaryTag },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, Object.assign({ ref: ref }, props))));
+    WrappedComponent.displayName = `${getDisplayName(Component)}ErrorBoundary`;
+    return WrappedComponent;
+};
+// helper for HOC
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getDisplayName(WrappedComponent) {
+    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+/* harmony default export */ __webpack_exports__["default"] = (ComponentErrorBoundary);
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/froot.tsx":
+/*!***********************!*\
+  !*** ./src/froot.tsx ***!
+  \***********************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _helpers_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @helpers/logger */ "./src/helpers/logger.ts");
+/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/App */ "./src/components/App.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (() => __awaiter(void 0, void 0, void 0, function* () {
+    const logger = new _helpers_logger__WEBPACK_IMPORTED_MODULE_2__["default"]('froot');
+    try {
+        // load router
+        // load api
+        // track data with newrelic
+        // track data with google analystic 
+        return {
+            render: () => {
+                // some context api here
+                // GraphqlContext
+                // UserDataContext
+                react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_App__WEBPACK_IMPORTED_MODULE_3__["default"], null))), document.getElementById('root'));
+            },
+        };
+    }
+    catch (error) {
+        logger.logError(error, 'Could not load froot correctly');
+        return {
+            render: (ErrorPage = null) => {
+                react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(ErrorPage, null), document.getElementById('content-main'));
+            },
+        };
+    }
+}));
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/helpers/broswer.ts":
+/*!********************************!*\
+  !*** ./src/helpers/broswer.ts ***!
+  \********************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getBrowser": function() { return /* binding */ getBrowser; },
+/* harmony export */   "getBrowserVersion": function() { return /* binding */ getBrowserVersion; }
+/* harmony export */ });
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+const getBrowser = () => {
+    switch (navigator.appName) {
+        case "Opera":
+            return "opera";
+        case "Microsoft Internet Explorer":
+            return "msie";
+        case "Netscape": {
+            const re = new RegExp("Trident/.*rv:([0-9]{1,}[.0-9]{0,})");
+            if (re.exec(navigator.userAgent) !== null) {
+                return "msie";
+            }
+        }
+        /* falls through */
+        default:
+            if (navigator.vendor.match(/Google Inc./i) !== null) {
+                return "chrome";
+            }
+            else if (navigator.vendor.match(/Apple Computer, Inc./i) !== null) {
+                if (navigator.userAgent.match(/iPad/i) !== null) {
+                    return "ipad";
+                }
+                else if (navigator.userAgent.match(/iPhone/i) !== null) {
+                    return "iphone";
+                }
+                return "safari";
+            }
+            else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+                return "firefox";
+            }
+            else if (navigator.userAgent.indexOf("Edge") !== -1) {
+                return "edge";
+            }
+    }
+    return "unknown";
+};
+const getBrowserVersion = () => {
+    const browser = getBrowser();
+    if (browser === "unknown") {
+        return 0;
+    }
+    const reExec = new RegExp("Trident/.*rv:([0-9]{1,}[.0-9]{0,})").exec(navigator.userAgent);
+    if (browser === "msie" &&
+        reExec !== null &&
+        reExec[1] &&
+        reExec[1].split(".")[0]) {
+        return parseInt(reExec[1].split(".")[0], 10);
+    }
+    const searchString = {
+        chrome: "Chrome",
+        safari: "Version",
+        ipad: "Version",
+        iphone: "Version",
+        opera: "Version",
+        firefox: "Firefox",
+        msie: "MSIE",
+        edge: "Edge",
+    };
+    return parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf(searchString[browser]) +
+        searchString[browser].length +
+        1));
+};
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/helpers/errors/getErrorLevel.ts":
+/*!*********************************************!*\
+  !*** ./src/helpers/errors/getErrorLevel.ts ***!
+  \*********************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helpers/logger */ "./src/helpers/logger.ts");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+function isErrorInWhiteListedDomain(errorStack) {
+    var _a, _b;
+    if (!errorStack) {
+        return false;
+    }
+    const stackFrames = errorStack.split(/\r|\n/gi);
+    const lastStackFrame = stackFrames[stackFrames.length - 1];
+    // exclude New Relic's wrapper from domain search
+    if (lastStackFrame.includes("nrWrapper")) {
+        stackFrames.pop();
+    }
+    const firstFrameWithMessage = stackFrames.slice(0, 2).join("");
+    const whiteListedDomains = new RegExp((_b = (_a = window.app) === null || _a === void 0 ? void 0 : _a.config) === null || _b === void 0 ? void 0 : _b.cdnDomain, "gi");
+    return whiteListedDomains.test(firstFrameWithMessage);
+}
+/* harmony default export */ __webpack_exports__["default"] = ((error) => {
+    var _a, _b;
+    const stack = (_a = error.error) === null || _a === void 0 ? void 0 : _a.stack;
+    const hasErrorStack = typeof stack === "string";
+    const isBlackListedDomain = !isErrorInWhiteListedDomain(stack);
+    const isSupportedBrowser = (_b = window.app) === null || _b === void 0 ? void 0 : _b.supportedBrowser;
+    if (!hasErrorStack || isBlackListedDomain || !isSupportedBrowser) {
+        return "info";
+    }
+    return "error";
+});
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/helpers/errors/logError.ts":
+/*!****************************************!*\
+  !*** ./src/helpers/errors/logError.ts ***!
+  \****************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "logError": function() { return /* binding */ logError; }
+/* harmony export */ });
+/* harmony import */ var _helpers_logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helpers/logger */ "./src/helpers/logger.ts");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+function getDerivedFacility(error) {
+    var _a, _b;
+    let stack;
+    if (error instanceof ErrorEvent) {
+        stack = (_a = error.error) === null || _a === void 0 ? void 0 : _a.stack;
+    }
+    else if (error instanceof Error) {
+        stack = error.stack;
+    }
+    if (stack) {
+        const lastMatch = stack.match(/pipedriveassets\.[a-z]+\/[a-z0-9-_]+\//gi);
+        if (lastMatch) {
+            const facility = (_b = lastMatch[0]) === null || _b === void 0 ? void 0 : _b.split("/")[1];
+            return facility;
+        }
+    }
+    return null;
+}
+function logError(logger, error, level) {
+    const derivedFacility = getDerivedFacility(error);
+    const extraData = {};
+    if (derivedFacility) {
+        extraData.facility_is_derived = "true";
+        const derivedLogger = new _helpers_logger__WEBPACK_IMPORTED_MODULE_0__["default"](derivedFacility, "unhandledError");
+        derivedLogger.logError(error, null, level, extraData, derivedFacility);
+        return;
+    }
+    logger.logError(error, null, level, extraData, derivedFacility);
+}
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/helpers/errors/loggerInstances.ts":
+/*!***********************************************!*\
+  !*** ./src/helpers/errors/loggerInstances.ts ***!
+  \***********************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "logger": function() { return /* binding */ logger; },
+/* harmony export */   "unhandledErrors": function() { return /* binding */ unhandledErrors; }
+/* harmony export */ });
+/* harmony import */ var _helpers_logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helpers/logger */ "./src/helpers/logger.ts");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+
+const logger = new _helpers_logger__WEBPACK_IMPORTED_MODULE_0__["default"]("froot", "entry");
+const unhandledErrors = new _helpers_logger__WEBPACK_IMPORTED_MODULE_0__["default"]("unhandled-errors");
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/helpers/fetch.ts":
+/*!******************************!*\
+  !*** ./src/helpers/fetch.ts ***!
+  \******************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getCookieValue": function() { return /* binding */ getCookieValue; },
+/* harmony export */   "get": function() { return /* binding */ get; },
+/* harmony export */   "put": function() { return /* binding */ put; },
+/* harmony export */   "patch": function() { return /* binding */ patch; },
+/* harmony export */   "post": function() { return /* binding */ post; },
+/* harmony export */   "remove": function() { return /* binding */ remove; }
+/* harmony export */ });
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const errorMessages = {
+    default: "Request unsuccessful",
+    invalidJSON: "Did not receive JSON response",
+    notAvailable: "Fetch is not available",
+    unauthorized: "Unauthorized request",
+};
+const defineProperty = (obj = {}, key, value) => {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true,
+        });
+    }
+    else {
+        Object.assign(obj, {
+            key: value,
+        });
+    }
+    return obj;
+};
+const objectSpread = (target, ...args) => {
+    for (let i = 1; i < args.length; i++) {
+        const source = args[i] != null ? args[i] : {};
+        let ownKeys = Object.keys(source);
+        if (typeof Object.getOwnPropertySymbols === "function") {
+            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source)
+                .filter((sym) => {
+                var _a;
+                return (_a = Object.getOwnPropertyDescriptor(source, sym)) === null || _a === void 0 ? void 0 : _a.enumerable;
+            })
+                .toString());
+        }
+        ownKeys.forEach((key) => {
+            defineProperty(target, key, source[key]);
+        });
+    }
+    return target;
+};
+const objectWithoutPropertiesLoose = (source = {}, excluded) => {
+    if (source == null)
+        return {};
+    const target = {};
+    const sourceKeys = Object.keys(source);
+    let key;
+    for (let i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0)
+            continue;
+        target[key] = source[key];
+    }
+    return target;
+};
+const objectWithoutProperties = (source = {}, excluded) => {
+    if (source == null)
+        return {};
+    const target = objectWithoutPropertiesLoose(source, excluded);
+    let key, i;
+    if (Object.getOwnPropertySymbols) {
+        const sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for (i = 0; i < sourceSymbolKeys.length; i++) {
+            key = sourceSymbolKeys[i];
+            if (excluded.indexOf(key.toString()) >= 0)
+                continue;
+            if (!Object.prototype.propertyIsEnumerable.call(source, key))
+                continue;
+            target[key.toString()] =
+                source[key.toString()];
+        }
+    }
+    return target;
+};
+const getCookieValue = (name) => {
+    var _a;
+    const value = "; ".concat(document.cookie);
+    const parts = value.split("; ".concat(name, "="));
+    if (!parts || parts.length !== 2) {
+        return "";
+    }
+    return (_a = parts.pop()) === null || _a === void 0 ? void 0 : _a.split(";").shift();
+};
+const parseResponse = (response, isErrorResponse = false) => {
+    return new Promise(function (resolve, reject) {
+        response
+            .json()
+            .then(function (parsedResponse) {
+            if (isErrorResponse || !parsedResponse.success) {
+                return reject(Object.assign({
+                    message: errorMessages.default,
+                }, parsedResponse));
+            }
+            return resolve(parsedResponse);
+        })
+            .catch((err) => {
+            const message = err.message.includes("invalid json response body")
+                ? errorMessages.invalidJSON
+                : errorMessages.default;
+            return reject(new Error(message));
+        });
+    });
+};
+const _fetch = (url, ...args) => {
+    const options = args.length > 1 && args[1] !== undefined ? args[1] : {};
+    if (!__webpack_require__.g.fetch) {
+        throw new Error(errorMessages.notAvailable);
+    }
+    const optionsRetryOptions = options.retryOptions;
+    const retryOptions = optionsRetryOptions === undefined
+        ? {
+            retries: 1,
+            retryDelay: 250,
+        }
+        : optionsRetryOptions;
+    const optionsQueryParams = options.queryParams;
+    const queryParams = optionsQueryParams === undefined ? {} : optionsQueryParams;
+    const authCallback = options.authCallback;
+    const restOptions = objectWithoutProperties(options, [
+        "retryOptions",
+        "queryParams",
+        "authCallback",
+    ]);
+    const queryWithDefaults = objectSpread({
+        session_token: getCookieValue("pipe-session-token"),
+        strict_mode: true,
+    }, queryParams);
+    const queryString = Object.keys(queryWithDefaults)
+        .map((key) => {
+        const value = queryWithDefaults[key];
+        return "".concat(key, "=").concat(encodeURIComponent(value));
+    })
+        .join("&");
+    url += "".concat(url.match(/\?/) ? "&" : "?").concat(queryString);
+    const fetchOptions = objectSpread({
+        credentials: "include",
+    }, restOptions, {
+        headers: objectSpread({
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Cache-control": "no-cache",
+            Pragma: "no-cache",
+        }, restOptions.headers),
+    });
+    return new Promise((resolve, reject) => {
+        function retryFetch(...args2) {
+            return __awaiter(this, void 0, void 0, function* () {
+                let retriesLeft = args2.length > 0 && args2[0] !== undefined
+                    ? args2[0]
+                    : retryOptions.retries - 1;
+                try {
+                    const response = yield __webpack_require__.g.fetch(url, fetchOptions);
+                    if (response.status === 401) {
+                        if (typeof authCallback === "function") {
+                            authCallback(response);
+                        }
+                        else {
+                            window.location.assign("/auth/login");
+                        }
+                        return reject(new Error(errorMessages.unauthorized));
+                    }
+                    if (response.status < 200 || response.status >= 300) {
+                        return parseResponse(response, true);
+                    }
+                    const parsedResponse = yield parseResponse(response);
+                    return resolve(parsedResponse);
+                }
+                catch (err) {
+                    if (retriesLeft > 0) {
+                        setTimeout(function () {
+                            retryFetch(--retriesLeft);
+                        }, retryOptions.retryDelay);
+                    }
+                    else {
+                        if (err instanceof Error && retryOptions.retries > 1) {
+                            return reject(new Error("Request unsuccessful after "
+                                .concat(retryOptions.retries, " retries with error: ")
+                                .concat(err.message)));
+                        }
+                        reject(err);
+                    }
+                }
+            });
+        }
+        retryFetch();
+    });
+};
+const getStringData = (data = {}) => {
+    return typeof data === "string" ? data : JSON.stringify(data);
+};
+const get = (path, options) => {
+    return _fetch(path, objectSpread({
+        method: "GET",
+    }, options));
+};
+const post = (path, data = {}, options = {}) => {
+    const stringData = getStringData(data);
+    return _fetch(path, objectSpread({
+        method: "POST",
+        body: stringData,
+    }, options));
+};
+const put = (path, data, options) => {
+    const stringData = getStringData(data);
+    return _fetch(path, objectSpread({
+        method: "PUT",
+        body: stringData,
+    }, options));
+};
+const patch = (path, data, options) => {
+    const stringData = getStringData(data);
+    return _fetch(path, objectSpread({
+        method: "PATCH",
+        body: stringData,
+    }, options));
+};
+const remove = (path, data, options) => {
+    const stringData = getStringData(data);
+    return _fetch(path, objectSpread({
+        method: "DELETE",
+        body: stringData,
+    }, options));
+};
+/* harmony default export */ __webpack_exports__["default"] = (_fetch);
+
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/helpers/logger.ts":
+/*!*******************************!*\
+  !*** ./src/helpers/logger.ts ***!
+  \*******************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Logger; }
+/* harmony export */ });
+/* harmony import */ var _broswer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./broswer */ "./src/helpers/broswer.ts");
+/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetch */ "./src/helpers/fetch.ts");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
+const localLog = {
+    info: "info",
+    notice: "log",
+    warning: "warn",
+    error: "error",
+    debug: "log",
+};
+/* eslint-disable no-bitwise */
+const stringToHashInt = (s) => {
+    let hash = 0;
+    for (let i = 0; i < s.length; i++) {
+        hash = s.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return hash;
+};
+const intToRGB = (i) => {
+    let hex = ((i >> 24) & 0xff).toString(16) +
+        ((i >> 16) & 0xff).toString(16) +
+        ((i >> 8) & 0xff).toString(16) +
+        (i & 0xff).toString(16);
+    hex += "000000";
+    return hex.substring(0, 6);
+};
+/* eslint-enable no-bitwise */
+const invertColor = (hex) => {
+    // invert color components
+    const r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16);
+    const g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16);
+    const b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
+    // pad each with zeros and return
+    return `${r.padStart(2, "0")}${g.padStart(2, "0")}${b.padStart(2, "0")}`;
+};
+// const getScriptUrls = () => {
+//   const scripts = document.getElementsByTagName('script');
+//   return Array.prototype.map.call(scripts, (script) => script.src).filter((script) => !!script);
+// };
+const addNavigatorData = (data) => {
+    Object.assign(data, {
+        browser: (0,_broswer__WEBPACK_IMPORTED_MODULE_0__.getBrowser)(),
+        browser_version: (0,_broswer__WEBPACK_IMPORTED_MODULE_0__.getBrowserVersion)(),
+        language: navigator.language,
+        platform: navigator.platform,
+        userAgent: navigator.userAgent,
+        url: location.href,
+        // scriptUrls: getScriptUrls().join('\n'),
+    });
+};
+class Logger {
+    constructor(module, subModule = "", baseData = {}) {
+        this.module = module;
+        this.subModule = subModule;
+        this.baseData = baseData;
+        this.moduleName = [module, subModule].filter((m) => !!m).join(":");
+        this.textColor = intToRGB(stringToHashInt(this.moduleName));
+        this.backgroundColor = invertColor(this.textColor);
+        if (subModule) {
+            Object.assign(this.baseData, { subModule });
+        }
+    }
+    logFunction(func, ...args) {
+        let allowedModules;
+        try {
+            allowedModules =
+                window.localStorage &&
+                    JSON.parse(window.localStorage.getItem("log") || "{}");
+        }
+        catch (error) {
+            allowedModules = [];
+        }
+        if (func !== "error" &&
+            (!Array.isArray(allowedModules) || !allowedModules.includes(this.module))) {
+            return;
+        }
+        window.console &&
+            window.console[func](`%c ${this.moduleName} `, `background: #${this.backgroundColor}; color: #${this.textColor}`, ...args);
+    }
+    log(...args) {
+        this.logFunction("log", ...args);
+    }
+    log2(...args) {
+        this.log(...args);
+    }
+    info(...args) {
+        this.logFunction("info", ...args);
+    }
+    warn(...args) {
+        this.logFunction("warn", ...args);
+    }
+    error(...args) {
+        this.logFunction("error", ...args);
+    }
+    remote(level, message, data = {}, facility = null) {
+        const payload = {
+            facility: facility || this.module,
+            message,
+            data: Object.assign(Object.assign({}, data), this.baseData),
+        };
+        switch (localLog[level]) {
+            case "info":
+                this.info(payload);
+                break;
+            case "log":
+                this.log(payload);
+                break;
+            case "warn":
+                this.warn(payload);
+                break;
+            case "error":
+                this.error(payload);
+                break;
+        }
+        (0,_fetch__WEBPACK_IMPORTED_MODULE_1__.post)(`/api/v1/logs/${level}`, payload, { cache: "no-cache" }).catch((error) => {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            selfLogger.warn("log.remote failed", error);
+        });
+    }
+    logError(error, message = undefined, level = "error", extraData = {}, facility = undefined) {
+        let _a, _b;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const data = {};
+        if (error instanceof ErrorEvent) {
+            Object.assign(data, {
+                error_message: (_a = error.error) === null || _a === undefined
+                    ? undefined
+                    : _a.message,
+                file: error.filename,
+                line: error.lineno,
+                col: error.colno,
+                stack: (_b = error.error) === null || _b === undefined
+                    ? undefined
+                    : _b.stack,
+            });
+        }
+        else if (error instanceof Error) {
+            Object.assign(data, {
+                error_message: error.message,
+                stack: error.stack,
+            });
+        }
+        else {
+            Object.assign(data, {
+                error_message: error,
+            });
+        }
+        addNavigatorData(data);
+        Object.assign(data, extraData);
+        this.remote(level, message || data.error_message, data, facility);
+    }
+}
+const selfLogger = new Logger("logger");
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/index.tsx":
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_errors_logError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helpers/errors/logError */ "./src/helpers/errors/logError.ts");
+/* harmony import */ var _helpers_errors_loggerInstances__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @helpers/errors/loggerInstances */ "./src/helpers/errors/loggerInstances.ts");
+/* harmony import */ var _helpers_errors_getErrorLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @helpers/errors/getErrorLevel */ "./src/helpers/errors/getErrorLevel.ts");
+/* harmony import */ var _helpers_logger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @helpers/logger */ "./src/helpers/logger.ts");
+/* harmony import */ var _froot__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./froot */ "./src/froot.tsx");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './app';
+// import Logger from '@pipedrive/tools/logger';
+// import { FrootRouter } from '@pipedrive/router';
+// import ToolsContext from '@pipedrive/context/ToolsContext';
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+// document.addEventListener("DOMContentLoaded", function (event) {
+//   const logger = new Logger('froot.index');
+//   const router = new FrootRouter();
+//   const toolsContextValue: ToolsContext = {
+//     router
+//   }
+//   ReactDOM.render(
+//     <>
+//       <ToolsContext.Provider value={toolsContextValue}>
+//         <App />
+//       </ToolsContext.Provider>
+//     </>,
+//     document.getElementById('root'),
+//   );
+//   const skeleton = document.getElementById("skeleton");
+//   if (skeleton != null) {
+//     skeleton.style.opacity = "0";
+//     skeleton.style.display = "none";
+//   }
+// });
+
+
+
+
+
+// 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
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    window.addEventListener('error', (event) => {
+        (0,_helpers_errors_logError__WEBPACK_IMPORTED_MODULE_0__.logError)(_helpers_errors_loggerInstances__WEBPACK_IMPORTED_MODULE_1__.unhandledErrors, event, (0,_helpers_errors_getErrorLevel__WEBPACK_IMPORTED_MODULE_2__["default"])(event));
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        var _a;
+        if (typeof event.reason === 'object' && ((_a = event.reason) === null || _a === void 0 ? void 0 : _a.componentName)) {
+            // remap the componentLoader rejections there's no reason to blame froot for x component not loading
+            const derivedLogger = new _helpers_logger__WEBPACK_IMPORTED_MODULE_3__["default"](event.reason.componentName, 'componentLoader');
+            derivedLogger.logError(event.reason.message);
+            event.preventDefault();
+            return;
+        }
+        (0,_helpers_errors_logError__WEBPACK_IMPORTED_MODULE_0__.logError)(_helpers_errors_loggerInstances__WEBPACK_IMPORTED_MODULE_1__.unhandledErrors, event.reason, 'error');
+        event.preventDefault();
+    });
+    try {
+        // 1. Load configuration
+        // 2. Set global app to help things coming
+        const frootA = (0,_froot__WEBPACK_IMPORTED_MODULE_4__["default"])();
+        (yield frootA).render();
+        const skeleton = document.getElementById("skeleton");
+        skeleton === null || skeleton === void 0 ? void 0 : skeleton.remove();
+    }
+    catch (error) {
+        _helpers_errors_loggerInstances__WEBPACK_IMPORTED_MODULE_1__.logger.logError(error, 'Could not initialize froot');
+    }
+}))();
+
+
+var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		var errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		var testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
 
 /***/ "./node_modules/@ladifire-opensource/stylex-theme/index.js":
 /*!*****************************************************************!*\
@@ -329,602 +1510,6 @@ const ExecutionEnvironment = {
 
 module.exports = ExecutionEnvironment;
 
-
-/***/ }),
-
-/***/ "./src/components/App.tsx":
-/*!********************************!*\
-  !*** ./src/components/App.tsx ***!
-  \********************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_yugi_0Sasuk3_js_best_src_components_App_uskZLHL_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/components/App.uskZLHL.css */ "./src/components/App.uskZLHL.css");
-/* harmony import */ var _home_yugi_0Sasuk3_js_best_src_components_App_uskZLHL_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_home_yugi_0Sasuk3_js_best_src_components_App_uskZLHL_css__WEBPACK_IMPORTED_MODULE_0__);
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-"use strict";
-
-__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'core-js/modules/es.object.define-property.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-Object.defineProperty(__webpack_exports__, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _stylex = _interopRequireDefault(__webpack_require__(/*! @ladifire-opensource/stylex */ "./node_modules/@ladifire-opensource/stylex/index.js"));
-
-var _ErrorBoundary = __webpack_require__(/*! ./ErrorBoundary */ "./src/components/ErrorBoundary.tsx");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-// import { useStaticStyles } from "./GlobalStyle";
-var styles = {
-  root: {
-    fontWeight: "y54dqtlu",
-    color: "jab0vpmp"
-  }
-};
-
-function App() {
-  // useStaticStyles();
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _stylex["default"])(styles.root)
-  }, "Component");
-}
-
-_c = App;
-
-var _default = (0, _ErrorBoundary.withErrorBoundary)("App", App);
-
-exports["default"] = _default;
-
-var _c;
-
-__webpack_require__.$Refresh$.register(_c, "App");
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/components/ErrorBoundary.tsx":
-/*!******************************************!*\
-  !*** ./src/components/ErrorBoundary.tsx ***!
-  \******************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "withErrorBoundary": function() { return /* binding */ withErrorBoundary; }
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_error_boundary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-error-boundary */ "./node_modules/react-error-boundary/dist/react-error-boundary.umd.js");
-/* harmony import */ var react_error_boundary__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_error_boundary__WEBPACK_IMPORTED_MODULE_2__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-
-
-
-const logger = new Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("ErrorBoundary");
-const ComponentErrorBoundary = ({ boundaryTag, children }) => {
-    // useCallback w/ react-hooks so we don't pass a brand new function every time this re-renders
-    const FallbackComponent = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'none' }, "data-component-boundary-error": `Error while rendering the component ${boundaryTag ? `([${boundaryTag}])` : ''}` }), [boundaryTag]);
-    const onError = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => (error) => {
-        const errorMessage = `An error has occurred while rendering component contained with MartyErrorBoundary: ${error.toString()}`;
-        logger.logError(`${boundaryTag ? `[${boundaryTag}]: ` : ''}${errorMessage}`);
-    }, [boundaryTag]);
-    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_error_boundary__WEBPACK_IMPORTED_MODULE_2__.ErrorBoundary, { FallbackComponent: FallbackComponent, onError: onError }, children);
-};
-const withErrorBoundary = (boundaryTag, Component) => {
-    const WrappedComponent = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(ComponentErrorBoundary, { boundaryTag: boundaryTag },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, Object.assign({ ref: ref }, props))));
-    WrappedComponent.displayName = `${getDisplayName(Component)}ErrorBoundary`;
-    return WrappedComponent;
-};
-// helper for HOC
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getDisplayName(WrappedComponent) {
-    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
-/* harmony default export */ __webpack_exports__["default"] = (ComponentErrorBoundary);
-
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/froot.tsx":
-/*!***********************!*\
-  !*** ./src/froot.tsx ***!
-  \***********************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/App */ "./src/components/App.tsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (() => __awaiter(void 0, void 0, void 0, function* () {
-    const logger = new Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())('froot');
-    try {
-        // load router
-        // load api
-        // track data with newrelic
-        // track data with google analystic 
-        return {
-            render: () => {
-                // some context api here
-                // GraphqlContext
-                // UserDataContext
-                react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_App__WEBPACK_IMPORTED_MODULE_3__["default"], null))), document.getElementById('root'));
-            },
-        };
-    }
-    catch (error) {
-        logger.logError(error, 'Could not load froot correctly');
-        return {
-            render: (ErrorPage = null) => {
-                react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(ErrorPage, null), document.getElementById('content-main'));
-            },
-        };
-    }
-}));
-
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/index.tsx":
-/*!***********************!*\
-  !*** ./src/index.tsx ***!
-  \***********************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pipedrive_utils_logError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pipedrive/utils/logError */ "./src/pipedrive/utils/logError.ts");
-/* harmony import */ var _pipedrive_utils_loggerInstances__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pipedrive/utils/loggerInstances */ "./src/pipedrive/utils/loggerInstances.ts");
-/* harmony import */ var _pipedrive_utils_getErrorLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pipedrive/utils/getErrorLevel */ "./src/pipedrive/utils/getErrorLevel.ts");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _froot__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./froot */ "./src/froot.tsx");
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './app';
-// import Logger from '@pipedrive/tools/logger';
-// import { FrootRouter } from '@pipedrive/router';
-// import ToolsContext from '@pipedrive/context/ToolsContext';
-var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-// document.addEventListener("DOMContentLoaded", function (event) {
-//   const logger = new Logger('froot.index');
-//   const router = new FrootRouter();
-//   const toolsContextValue: ToolsContext = {
-//     router
-//   }
-//   ReactDOM.render(
-//     <>
-//       <ToolsContext.Provider value={toolsContextValue}>
-//         <App />
-//       </ToolsContext.Provider>
-//     </>,
-//     document.getElementById('root'),
-//   );
-//   const skeleton = document.getElementById("skeleton");
-//   if (skeleton != null) {
-//     skeleton.style.opacity = "0";
-//     skeleton.style.display = "none";
-//   }
-// });
-
-
-
-
-
-// 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
-(() => __awaiter(void 0, void 0, void 0, function* () {
-    window.addEventListener('error', (event) => {
-        (0,_pipedrive_utils_logError__WEBPACK_IMPORTED_MODULE_0__.logError)(_pipedrive_utils_loggerInstances__WEBPACK_IMPORTED_MODULE_1__.unhandledErrors, event, (0,_pipedrive_utils_getErrorLevel__WEBPACK_IMPORTED_MODULE_2__["default"])(event));
-    });
-    window.addEventListener('unhandledrejection', (event) => {
-        var _a;
-        if (typeof event.reason === 'object' && ((_a = event.reason) === null || _a === void 0 ? void 0 : _a.componentName)) {
-            // remap the componentLoader rejections there's no reason to blame froot for x component not loading
-            const derivedLogger = new Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(event.reason.componentName, 'componentLoader');
-            derivedLogger.logError(event.reason.message);
-            event.preventDefault();
-            return;
-        }
-        (0,_pipedrive_utils_logError__WEBPACK_IMPORTED_MODULE_0__.logError)(_pipedrive_utils_loggerInstances__WEBPACK_IMPORTED_MODULE_1__.unhandledErrors, event.reason, 'error');
-        event.preventDefault();
-    });
-    try {
-        // 1. Load configuration
-        // 2. Set global app to help things coming
-        const frootA = (0,_froot__WEBPACK_IMPORTED_MODULE_4__["default"])();
-        (yield frootA).render();
-        const skeleton = document.getElementById("skeleton");
-        skeleton === null || skeleton === void 0 ? void 0 : skeleton.remove();
-    }
-    catch (error) {
-        _pipedrive_utils_loggerInstances__WEBPACK_IMPORTED_MODULE_1__.logger.logError(error, 'Could not initialize froot');
-    }
-}))();
-
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/pipedrive/utils/getErrorLevel.ts":
-/*!**********************************************!*\
-  !*** ./src/pipedrive/utils/getErrorLevel.ts ***!
-  \**********************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-function isErrorInWhiteListedDomain(errorStack) {
-    var _a, _b;
-    if (!errorStack) {
-        return false;
-    }
-    const stackFrames = errorStack.split(/\r|\n/gi);
-    const lastStackFrame = stackFrames[stackFrames.length - 1];
-    // exclude New Relic's wrapper from domain search
-    if (lastStackFrame.includes("nrWrapper")) {
-        stackFrames.pop();
-    }
-    const firstFrameWithMessage = stackFrames.slice(0, 2).join("");
-    const whiteListedDomains = new RegExp((_b = (_a = window.app) === null || _a === void 0 ? void 0 : _a.config) === null || _b === void 0 ? void 0 : _b.cdnDomain, "gi");
-    return whiteListedDomains.test(firstFrameWithMessage);
-}
-/* harmony default export */ __webpack_exports__["default"] = ((error) => {
-    var _a, _b;
-    const stack = (_a = error.error) === null || _a === void 0 ? void 0 : _a.stack;
-    const hasErrorStack = typeof stack === "string";
-    const isBlackListedDomain = !isErrorInWhiteListedDomain(stack);
-    const isSupportedBrowser = (_b = window.app) === null || _b === void 0 ? void 0 : _b.supportedBrowser;
-    if (!hasErrorStack || isBlackListedDomain || !isSupportedBrowser) {
-        return "info";
-    }
-    return "error";
-});
-
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/pipedrive/utils/logError.ts":
-/*!*****************************************!*\
-  !*** ./src/pipedrive/utils/logError.ts ***!
-  \*****************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "logError": function() { return /* binding */ logError; }
-/* harmony export */ });
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-function getDerivedFacility(error) {
-    var _a, _b;
-    let stack;
-    if (error instanceof ErrorEvent) {
-        stack = (_a = error.error) === null || _a === void 0 ? void 0 : _a.stack;
-    }
-    else if (error instanceof Error) {
-        stack = error.stack;
-    }
-    if (stack) {
-        const lastMatch = stack.match(/pipedriveassets\.[a-z]+\/[a-z0-9-_]+\//gi);
-        if (lastMatch) {
-            const facility = (_b = lastMatch[0]) === null || _b === void 0 ? void 0 : _b.split("/")[1];
-            return facility;
-        }
-    }
-    return null;
-}
-function logError(logger, error, level) {
-    const derivedFacility = getDerivedFacility(error);
-    const extraData = {};
-    if (derivedFacility) {
-        extraData.facility_is_derived = "true";
-        const derivedLogger = new Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(derivedFacility, "unhandledError");
-        derivedLogger.logError(error, null, level, extraData, derivedFacility);
-        return;
-    }
-    logger.logError(error, null, level, extraData, derivedFacility);
-}
-
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/pipedrive/utils/loggerInstances.ts":
-/*!************************************************!*\
-  !*** ./src/pipedrive/utils/loggerInstances.ts ***!
-  \************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "logger": function() { return /* binding */ logger; },
-/* harmony export */   "unhandledErrors": function() { return /* binding */ unhandledErrors; }
-/* harmony export */ });
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-
-const logger = new Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("froot", "entry");
-const unhandledErrors = new Object(function webpackMissingModule() { var e = new Error("Cannot find module '@pipedrive/tools/logger'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("unhandled-errors");
-
-
-var $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-var $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		var errorOverlay;
-		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
-			errorOverlay = __react_refresh_error_overlay__;
-		}
-		var testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
 
 /***/ }),
 
@@ -39842,7 +40427,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"headers":null,"historyFallback":{},"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":false,"port":8080,"progress":true,"publicPath":null,"ramdisk":false,"secure":false,"static":"./dist","status":true,"waitForBuild":true,"address":"[::]:8080","compilerName":null,"wpsId":"81e2bf0"};
+    options = {"compress":null,"headers":null,"historyFallback":{},"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":false,"port":8080,"progress":true,"publicPath":null,"ramdisk":false,"secure":false,"static":"./dist","status":true,"waitForBuild":true,"address":"[::]:8080","compilerName":null,"wpsId":"1ad268a"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -42809,7 +43394,7 @@ function _extends() {
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.hu = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "81e2bf0-" + chunkId + "-wps-hmr.js";
+/******/ 			return "1ad268a-" + chunkId + "-wps-hmr.js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -42824,12 +43409,12 @@ function _extends() {
 /******/ 	
 /******/ 	/* webpack/runtime/get update manifest filename */
 /******/ 	!function() {
-/******/ 		__webpack_require__.hmrF = function() { return "main-81e2bf0-wps-hmr.json"; };
+/******/ 		__webpack_require__.hmrF = function() { return "main-1ad268a-wps-hmr.json"; };
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "d01f3766777250254cc1"; }
+/******/ 		__webpack_require__.h = function() { return "693b1404373e3963ab16"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -43480,7 +44065,7 @@ function _extends() {
 /******/ 			});
 /******/ 		}
 /******/ 		
-/******/ 		this["webpackHotUpdatebest"] = function(chunkId, moreModules, runtime) {
+/******/ 		self["webpackHotUpdatebest"] = function(chunkId, moreModules, runtime) {
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 					currentUpdate[moduleId] = moreModules[moduleId];
@@ -43961,8 +44546,6 @@ function _extends() {
 /******/ 	__webpack_require__("./src/index.tsx");
 /******/ 	var __webpack_exports__ = __webpack_require__("./node_modules/webpack-plugin-serve/client.js");
 /******/ 	
-/******/ 	return __webpack_exports__;
 /******/ })()
 ;
-});
 //# sourceMappingURL=main.js.map

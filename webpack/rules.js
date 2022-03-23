@@ -21,18 +21,18 @@ const typescriptRule = {
   exclude: /node_modules/,
   use: [
     {
-      loader: StylexPlugin.loader,
-      options: {
-        inject: false,
-      },
-    },
-    {
       loader: "@griffel/webpack-loader",
     },
     {
       loader: "ts-loader",
       options: {
         transpileOnly: true,
+      },
+    },
+    {
+      loader: StylexPlugin.loader,
+      options: {
+        inject: false,
       },
     },
   ],
