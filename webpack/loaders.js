@@ -9,7 +9,15 @@ const babelLoader = {
   },
 };
 
-const cssLoader = "css-loader";
+// const cssLoader = "css-loader";
+const cssLoader = {
+  loader: "css-loader",
+  options: {
+    module: true,
+    importLoaders: 1,
+    localIntentName: "[sha1:hash:hex:4]",
+  },
+};
 const styleLoader = "style-loader";
 
 const miniCssExtractLoader = {

@@ -62,7 +62,6 @@ const definePlugin = new DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 });
 
-// const providePlugin = new ProvidePlugin();
 
 const cleanWebpacklugin = new CleanWebpackPlugin();
 
@@ -71,12 +70,6 @@ const esLintPlugin = new ESLintWebpackPlugin({
   extensions: ["js", "jsx", "ts", "tsx"],
 });
 
-// const forkTsCheckerWebpackPlugin = new ForkTsCheckerWebpackPlugin({
-//   async: process.env.MODE === "development" ? true : false,
-//   typescript: {
-//     configFile: path.join(ROOT_DIR, "/tsconfig.json"),
-//   },
-// });
 
 const reactRefreshPlugin = new ReactRefreshWebpackPlugin();
 
@@ -101,12 +94,10 @@ module.exports = {
   miniCssExtactPlugin,
   webpackPluginServe,
   definePlugin,
-  // providePlugin,
   cleanWebpacklugin,
   esLintPlugin,
   reactRefreshPlugin,
   attachRevisionPlugin,
   obfuscatorPlugin,
   forkTsPlugin
-  // forkTsCheckerWebpackPlugin,
 };

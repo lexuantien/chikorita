@@ -2,9 +2,10 @@ const path = require("path");
 const { ROOT_DIR } = require("./env");
 
 const alias = {
-  "@src": path.join(ROOT_DIR, "/src"),
   "@helpers": path.join(ROOT_DIR, "/src/helpers/"),
-  "@middleware": path.join(ROOT_DIR, "/src/middleware/"),
+  "@contexts": path.join(ROOT_DIR, "/src/contexts/"),
+  "@components": path.join(ROOT_DIR, "/src/components/"),
+  "@styles": path.join(ROOT_DIR, "/src/styles/"),
 };
 
 module.exports = {

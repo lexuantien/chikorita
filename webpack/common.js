@@ -6,7 +6,6 @@ const {
   miniCssExtactPlugin,
   definePlugin,
   esLintPlugin,
-  forkTsCheckerWebpackPlugin,
   forkTsPlugin,
 } = require("./plugins");
 const {
@@ -19,12 +18,12 @@ const {
   typescriptRule,
 } = require("./rules");
 
-// const { externals } = require("./externals");
-
+const { externalItems } = require("./externals");
+const StylexPlugin = require("@ladifire-opensource/stylex-webpack-plugin");
 const commonConfig = {
   context: ROOT_DIR,
 
-  entry: [path.join(ROOT_DIR, "/src/index..tsx")],
+  entry: [path.join(ROOT_DIR, "/src/index.tsx")],
 
   output: {
     path: path.join(ROOT_DIR, "/dist"),
@@ -34,6 +33,7 @@ const commonConfig = {
     clean: true,
     libraryTarget: "umd",
     globalObject: "this",
+    umdNamedDefine: true,
   },
 
   resolve: {
@@ -46,11 +46,11 @@ const commonConfig = {
     miniCssExtactPlugin,
     definePlugin,
     esLintPlugin,
-    forkTsPlugin
-    // forkTsCheckerWebpackPlugin,
+    forkTsPlugin,
+    new StylexPlugin(),
   ],
 
-  // externals,
+  externals: externalItems,
 
   module: {
     rules: [

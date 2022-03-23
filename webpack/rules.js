@@ -15,14 +15,27 @@ const javascriptRule = {
   include: path.join(ROOT_DIR, "/src"),
   use: babelLoader,
 };
-
+const StylexPlugin = require("@ladifire-opensource/stylex-webpack-plugin");
 const typescriptRule = {
   test: /\.tsx?$/,
-  loader: "ts-loader",
-  options: {
-    transpileOnly: true,
-  },
   exclude: /node_modules/,
+  use: [
+    {
+      loader: StylexPlugin.loader,
+      options: {
+        inject: false,
+      },
+    },
+    {
+      loader: "@griffel/webpack-loader",
+    },
+    {
+      loader: "ts-loader",
+      options: {
+        transpileOnly: true,
+      },
+    },
+  ],
 };
 
 const fontsRule = {

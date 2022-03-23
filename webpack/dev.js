@@ -8,11 +8,13 @@ const {
 const devConfig = {
   entry: ["webpack-plugin-serve/client"],
 
+  devtool: "source-map",
+
   watch: true,
 
   stats: {
     errorDetails: true,
-    children: true
+    children: true,
   },
 
   plugins: [
