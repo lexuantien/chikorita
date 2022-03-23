@@ -33,7 +33,7 @@ import { logger, unhandledErrors } from "@helpers/errors/loggerInstances";
 import getErrorLevel from "@helpers/errors/getErrorLevel";
 import Logger from "@helpers/logger";
 import froot from "./froot";
-// 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
+
 (async () => {
 
   window.addEventListener('error', (event) => {
