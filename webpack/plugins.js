@@ -1,4 +1,4 @@
-const { ROOT_DIR } = require("./env");
+const { ROOT_DIR } = require("./envs");
 
 const path = require("path");
 const glob = require("glob");
@@ -8,7 +8,6 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const WebpackNotifierPlugin = require("webpack-notifier");
 const PurgeCSSPlugin = require("purgecss-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { WebpackPluginServe } = require("webpack-plugin-serve");
 const { DefinePlugin, BannerPlugin } = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
@@ -16,6 +15,9 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const { GitRevisionPlugin } = require("git-revision-webpack-plugin");
 const WebpackObfuscator = require("webpack-obfuscator");
+
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const PATH = path.join(ROOT_DIR, "/src");
 
@@ -48,20 +50,10 @@ const purgeCssPlugin = new PurgeCSSPlugin({
   ],
 });
 
-const webpackPluginServe = new WebpackPluginServe({
-  port: process.env.PORT || 8080,
-  static: path.join(ROOT_DIR, "/dist"),
-  static: "./dist", // Expose if output.path changes
-  // liveReload: true,
-  waitForBuild: true,
-  historyFallback: true,
-});
-
 // const mode = process.env.NODE_ENV ?? "production";
 const definePlugin = new DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
 });
-
 
 const cleanWebpacklugin = new CleanWebpackPlugin();
 
@@ -70,14 +62,13 @@ const esLintPlugin = new ESLintWebpackPlugin({
   extensions: ["js", "jsx", "ts", "tsx"],
 });
 
-
 const reactRefreshPlugin = new ReactRefreshWebpackPlugin();
 
 const attachRevisionPlugin = new BannerPlugin({
   banner: new GitRevisionPlugin().version(),
 });
 
-const forkTsPlugin = new ForkTsCheckerWebpackPlugin()
+const forkTsPlugin = new ForkTsCheckerWebpackPlugin();
 
 const obfuscatorPlugin = new WebpackObfuscator(
   {
@@ -86,18 +77,23 @@ const obfuscatorPlugin = new WebpackObfuscator(
   ["excluded_bundle_name.js"]
 );
 
+const minifyJTS = new TerserPlugin();
+const minifyCss = ({ options }) =>
+  new CssMinimizerPlugin({ minimizerOptions: options });
+
 module.exports = {
   htmlWebpackPlugin,
   caseSensitivePathsPlugin,
   webpackNotifierPlugin,
   purgeCssPlugin,
   miniCssExtactPlugin,
-  webpackPluginServe,
   definePlugin,
   cleanWebpacklugin,
   esLintPlugin,
   reactRefreshPlugin,
   attachRevisionPlugin,
   obfuscatorPlugin,
-  forkTsPlugin
+  forkTsPlugin,
+  minifyCss,
+  minifyJTS,
 };

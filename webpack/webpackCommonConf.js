@@ -1,6 +1,5 @@
 const path = require("path");
-const { ROOT_DIR } = require("./env");
-const { alias } = require("./alias");
+const { ROOT_DIR } = require("./envs");
 const {
   htmlWebpackPlugin,
   miniCssExtactPlugin,
@@ -17,9 +16,8 @@ const {
   cssRule,
   typescriptRule,
 } = require("./rules");
-
-const { externalItems } = require("./externals");
 const StylexPlugin = require("@ladifire-opensource/stylex-webpack-plugin");
+
 const commonConfig = {
   context: ROOT_DIR,
 
@@ -38,7 +36,12 @@ const commonConfig = {
 
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-    alias,
+    alias: {
+      "@helpers": path.join(ROOT_DIR, "/src/helpers/"),
+      "@contexts": path.join(ROOT_DIR, "/src/contexts/"),
+      "@components": path.join(ROOT_DIR, "/src/components/"),
+      "@styles": path.join(ROOT_DIR, "/src/styles/"),
+    },
   },
 
   plugins: [
@@ -50,7 +53,16 @@ const commonConfig = {
     new StylexPlugin(),
   ],
 
-  externals: externalItems,
+  externals: {
+    // react: "React",
+    // "react-dom": {
+    //   root: "ReactDOM",
+    //   commonjs2: "react-dom",
+    //   commonjs: "react-dom",
+    //   amd: "react-dom",
+    //   umd: "react-dom",
+    // },
+  },
 
   module: {
     rules: [

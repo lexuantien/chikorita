@@ -8,6 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 export default async () => {
   const logger = new Logger('froot');
+
+
+
   try {
     // load router
     // load api
@@ -15,6 +18,7 @@ export default async () => {
     // track data with google analystic 
 
     return {
+
       render: () => {
         // some context api here
         // GraphqlContext

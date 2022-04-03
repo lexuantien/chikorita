@@ -1,31 +1,66 @@
+// {
+//   "compilerOptions": {
+//     "outDir": "./dist",
+//     "module": "commonjs",
+//     "target": "es6",
+//     "lib": ["es6", "dom"],
+//     "sourceMap": true,
+//     "allowJs": true,
+//     "jsx": "react",
+//     "moduleResolution": "node",
+//     "noImplicitReturns": true,
+//     "noImplicitThis": true,
+//     "noImplicitAny": true,
+//     "strictNullChecks": true,
+//     "baseUrl": "./",
+//     "rootDir": "./",
+//     "typeRoots": ["./node_modules/@types", "./src/@types"],
+//     "paths": {
+//       "@helpers/*": ["src/helpers/*"],
+//       "@contexts/*": ["src/contexts/*"],
+//       "@styles/*": ["src/styles/*"],
+//       "@components/*": ["src/components/*"]
+//     },
+//     "allowSyntheticDefaultImports": true,
+//     "esModuleInterop": true,
+//     "importsNotUsedAsValues": "preserve",
+//     "incremental": true
+//   },
+//   "include": ["src"],
+//   "exclude": ["**/node_modules", "**/.*/"]
+// }
+
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "module": "esnext",
+    "module": "CommonJS",
+    "noImplicitAny": false,
     "target": "es6",
-    "lib": ["es6", "dom"],
-    "sourceMap": true,
-    "allowJs": true,
     "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "baseUrl": "./",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": [
+      "es6",
+      "dom",
+      "es2016.array.include",
+      "es2017.object",
+      "es2017.intl"
+    ],
+    "skipLibCheck": true,
     "rootDir": "./",
-    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "baseUrl": ".",
     "paths": {
       "@helpers/*": ["src/helpers/*"],
       "@contexts/*": ["src/contexts/*"],
       "@styles/*": ["src/styles/*"],
       "@components/*": ["src/components/*"]
     },
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "importsNotUsedAsValues": "preserve",
-    "incremental": true
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
-  "include": ["src"],
-  "exclude": ["**/node_modules", "**/.*/"]
+  "exclude": ["**/node_modules"]
 }

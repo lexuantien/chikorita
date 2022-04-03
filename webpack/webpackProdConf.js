@@ -3,9 +3,9 @@ const {
   cleanWebpacklugin,
   attachRevisionPlugin,
   obfuscatorPlugin,
+  minifyCss,
+  minifyJTS,
 } = require("./plugins");
-
-const { splitChunks, minifyJTS, minifyCss } = require("./optimizations");
 
 const productionConfig = {
   plugins: [
@@ -21,7 +21,16 @@ const productionConfig = {
   },
 
   optimization: {
-    splitChunks: splitChunks,
+    splitChunks: {
+      minSize: { javascript: 20000, "css/mini-extra": 10000 },
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendor",
+          chunks: "initial",
+        },
+      },
+    },
     runtimeChunk: { name: "runtime" },
     minimizer: [minifyJTS, minifyCss({ options: { preset: ["default"] } })],
   },

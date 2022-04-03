@@ -1,8 +1,19 @@
+/* eslint-disable */
+// @ts-ignore
+import CometStyleXSheet from "@ladifire-opensource/stylex-theme";
+
+// // @ts-ignore
+import { cometStyleXDefaultTheme } from "@styles/defaultTheme";
+// // @ts-ignore
+import { CometStyleXDarkTheme } from "@styles/customTheme";
+
 import React from "react";
-// import { useStaticStyles } from "./GlobalStyle";
 
 import stylex from "@ladifire-opensource/stylex";
-import { withErrorBoundary } from "@components/ErrorBoundary";
+
+import { withErrorBoundary } from "./ErrorBoundary";
+
+
 
 const styles = stylex.create({
   root: {
@@ -14,12 +25,22 @@ const styles = stylex.create({
   },
 });
 
+
 function App() {
 
   // useStaticStyles();
 
+  // @ts-ignore
+  React.useEffect(() => {
+    CometStyleXSheet.rootStyleSheet.setRootTheme(cometStyleXDefaultTheme);
+    CometStyleXSheet.rootStyleSheet.setCustomTheme(CometStyleXDarkTheme);
+  }, []);
+
+
   return (
-    <div className={stylex(styles.root)}>Component</div>
+    <div className={stylex(styles.root)}>
+      cscadasd
+    </div >
   )
 }
 

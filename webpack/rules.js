@@ -1,13 +1,15 @@
 const path = require("path");
-const { ROOT_DIR } = require("./env");
+const { ROOT_DIR, isDevelopment } = require("./envs");
 const {
   babelLoader,
   miniCssExtractLoader,
   cssLoader,
   styleLoader,
   postCssLoader,
-  tsLoader,
 } = require("./loaders");
+
+const StylexPluginLoader = require("@ladifire-opensource/stylex-webpack-plugin");
+const ReactRefreshTypeScript = require("react-refresh-typescript");
 
 const javascriptRule = {
   test: /\.jsx?$/,
@@ -15,22 +17,21 @@ const javascriptRule = {
   include: path.join(ROOT_DIR, "/src"),
   use: babelLoader,
 };
-const StylexPlugin = require("@ladifire-opensource/stylex-webpack-plugin");
 const typescriptRule = {
   test: /\.tsx?$/,
   exclude: /node_modules/,
   use: [
     {
-      loader: "@griffel/webpack-loader",
-    },
-    {
       loader: "ts-loader",
       options: {
-        transpileOnly: true,
+        getCustomTransformers: () => ({
+          before: [isDevelopment && ReactRefreshTypeScript()].filter(Boolean),
+        }),
+        transpileOnly: isDevelopment,
       },
     },
     {
-      loader: StylexPlugin.loader,
+      loader: StylexPluginLoader.loader,
       options: {
         inject: false,
       },
@@ -80,7 +81,6 @@ const cssRule = {
     postCssLoader(),
     // according to the docs, sass-loader should be at the bottom, which
     // loads it first to avoid prefixes in your sourcemaps and other issues.
-    "sass-loader",
   ],
   sideEffects: true,
 };

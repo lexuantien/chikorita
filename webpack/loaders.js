@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
-const { ROOT_DIR } = require("./env");
+const { ROOT_DIR } = require("./envs");
 
 const babelLoader = {
   loader: "babel-loader",
@@ -13,9 +13,10 @@ const babelLoader = {
 const cssLoader = {
   loader: "css-loader",
   options: {
-    module: true,
     importLoaders: 1,
-    localIntentName: "[sha1:hash:hex:4]",
+    modules: {
+      localIdentName: '[sha1:hash:hex:4]"',
+    },
   },
 };
 const styleLoader = "style-loader";

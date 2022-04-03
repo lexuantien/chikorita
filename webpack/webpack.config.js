@@ -1,23 +1,22 @@
-const { mode } = require("webpack-nano/argv");
-
 const { merge } = require("webpack-merge");
 
-const commonConfig = require("./common");
-const prodConfig = require("./prod");
-const devConfig = require("./dev");
+const commonConfig = require("./webpackCommonConf");
+const prodConfig = require("./webpackProdConf");
+const devConfig = require("./webpackDevConf");
 
 // const a = merge(commonConfig, devConfig, { mode });
 // console.log(a.entry);
 
-const getConfig = (mode) => {
-  switch (mode) {
+const getConfig = (env, args) => {
+  console.log(env, args);
+  switch (args.mode) {
     case "production":
-      return merge(commonConfig, prodConfig, { mode });
+      return merge(commonConfig, prodConfig, { mode: args.mode });
     case "development":
-      return merge(commonConfig, devConfig, { mode });
+      return merge(commonConfig, devConfig, { mode: args.mode });
     default:
-      throw new Error(`Trying to use an unknown mode, ${mode}`);
+      throw new Error(`Trying to use an unknown mode, ${env}`);
   }
 };
 
-module.exports = getConfig(mode);
+module.exports = getConfig;
